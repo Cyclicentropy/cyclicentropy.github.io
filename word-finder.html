@@ -10,34 +10,34 @@
 
 <body>
     <h1>What other dictionary words contain your word?</h1>
-        <form id="word-form" class="word-form" action="" onsubmit="output(); return false;">
-            <div class="form-description">
-			    <h2>Enter your word</h2>
-			    <p>Enter a word and select whether you want to find its match in the dictionary or all other words that contain it.</p>
-		    </div>						
-			<ul>
-			    <li id="word-label" >
-		            <label class="description" for="element_1">Enter your word </label>
-		            <div>
-			            <input id="word" name="element_1" class="element text small" type="text" maxlength="255" value=""/> 
-                    </div>
-                    <p class="guidelines" id="guide_1"><small>Enter a single word</small></p> 
-                </li>
-                <li id="search-type" >
-		            <label class="description" for="element_2">Checkboxes </label>
-		                <span>
-			                <input id="full-word" name="full-word" class="element checkbox" type="checkbox" value="1" />
+    <form id="word-form" class="word-form" action="" onsubmit="output(); return false;">
+        <div class="form-description">
+            <h2>Enter your word</h2>
+            <p>Enter a word and select whether you want to find its match in the dictionary or all other words that contain it.</p>
+        </div>
+        <ul>
+            <li id="word-label">
+                <label class="description" for="element_1">Enter your word </label>
+                <div>
+                    <input id="word" name="element_1" class="element text small" type="text" maxlength="255" value="" />
+                </div>
+                <p class="guidelines" id="guide_1"><small>Enter a single word</small></p>
+            </li>
+            <li id="search-type">
+                <label class="description" for="element_2">Checkboxes </label>
+                <span>
+			                <input id="full-word" name="coverage" class="element checkbox" type="radio" value="1" />
                             <label class="choice" for="full-word">Find only my word</label>
-                            <input id="all-word" name="all-word" class="element checkbox" type="checkbox" value="1" />
+                            <input id="all-word" name="coverage" class="element checkbox" type="radio" value="2" />
                             <label class="choice" for="all-word">Find words containing my word</label>
-                        </span> 
-		        </li>
-                <li class="buttons">
-			        <input type="hidden" name="form_id" value="616" />
-				    <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-		        </li>
-			</ul>
-		</form>	
+                        </span>
+            </li>
+            <li class="buttons">
+                <input type="hidden" name="form_id" value="616" />
+                <input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+            </li>
+        </ul>
+    </form>
     <script src="word-finder.js"></script>
 </body>
 
