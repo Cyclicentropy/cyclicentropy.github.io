@@ -16,7 +16,6 @@ fetch('engmix.txt')
 .then(data => console.log(data));
  */
 
-const matches = document.getElementById('matches')
 
 function output() {
     console.log("The form was submitted");
@@ -39,32 +38,33 @@ function output() {
     getDataset(); */
 
     function fetchData() {
-      return fetch('engmix.txt')
-              .then(response =>
-                  response.text().then(text => text.split(/\r|\n/)));
-  }
-  
-  fetchData().then(arr => {
-    if(arr.includes(word)){
-      console.log("Found a match");
-      const matches = arr.filter(s => s.includes(word));
-      console.log(matches);
-      let listView = matches.join('<li>' + '</li>');
-      console.log(listView);   
-      if(fullWord == true){
-        console.log(fullWord);
-        document.getElementById("matches").innerHTML = word;
-      } else if(allWord == true){
-        console.log(allWord);
-        document.getElementById("matches").innerHTML = listView;
-      }
-      
+        return fetch('engmix.txt')
+            .then(response =>
+                response.text().then(text => text.split(/\r|\n/)));
     }
-  }
-    
 
-    
+    fetchData().then(arr => {
+            if (arr.includes(word)) {
+                console.log("Found a match");
+                const matches = arr.filter(s => s.includes(word));
+                console.log(matches);
+                let listView = matches.join('<li>' + '</li>');
+                console.log(listView);
+                let resultCount = matches.length;
+                document.getElementById("resultsFound").innerHTML = 'Found ' + resultCount + ' dictionary terms containing the word ' + word + '.';
+                if (fullWord == true) {
+                    console.log(fullWord);
+                    document.getElementById("matches").innerHTML = word;
+                } else if (allWord == true) {
+                    console.log(allWord);
+                    document.getElementById("matches").innerHTML = listView;
+                }
+
+            }
+        }
+
+
+
     );
-    
-}
 
+}
