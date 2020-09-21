@@ -55,6 +55,7 @@ function output() {
                 if (fullWord == true) {
                     console.log(fullWord);
                     document.getElementById("matches").innerHTML = word;
+                    document.getElementById("resultsFound").innerHTML = '';
                 } else if (allWord == true) {
                     console.log(allWord);
                     document.getElementById("matches").innerHTML = listView;
